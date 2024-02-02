@@ -18,12 +18,6 @@ New-Item -ItemType Directory -Path "$env:USERPROFILE\Desktop\Ferramentas"
 
 Expand-Archive -Path "C:\users\$env:USERNAME\Downloads\SysinternalsSuite.zip" -DestinationPath "$env:USERPROFILE\Desktop\Ferramentas"
 
-Chave de registro HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Update
-$registryPath1 = "HKLM:\System\CurrentControlSet\Control\Session Manager\Update"
-$registryValue1 = "C:\Windows\Temp\c11.exe"
-New-Item -Path $registryPath1 -Force
-Set-ItemProperty -Path $registryPath1 -Name "Update" -Value $registryValue1
-
 Chave de registro HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Windows Update
 $registryPath2 = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 $registryValue2 = "C:\Users\administrator\AppData\Roaming\c11.exe"
