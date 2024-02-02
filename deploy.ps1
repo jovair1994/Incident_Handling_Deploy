@@ -30,10 +30,10 @@ Nome das tarefas agendadas
 $taskName1 = "C-Update"
 $taskName2 = "Update-Windows"
 
-Crie a tarefa agendada Sqm-Update
+Crie a tarefa agendada 1
 Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "$filePath") -Trigger (New-ScheduledTaskTrigger -AtStartup) -TaskName $taskName1
 
-Crie a tarefa agendada Windows Update
+Crie a tarefa agendada 2
 Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "$filePath") -Trigger (New-ScheduledTaskTrigger -AtStartup) -TaskName $taskName2
 
 Clear-History
